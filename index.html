@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tahir Ayub & Shaista Ghani | Wedding Invitation</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ================= FULL SCREEN OPENING ================= -->
+
+  <div class="opening-screen" id="openingScreen">
+
+    <div class="opening-bg"></div>
+
+    <div class="full-envelope">
+
+      <div class="envelope-back"></div>
+
+      <div class="envelope-paper">
+
+        <div class="paper-heart">♥</div>
+
+        <div class="paper-title">
+          YOU ARE INVITED
+        </div>
+
+        <div class="paper-names">
+          Tahir &amp; Shaista
+        </div>
+
+      </div>
+
+      <div class="envelope-flap"></div>
+
+      <div class="envelope-front"></div>
+
+      <button
+        class="wax-seal"
+        id="openInvitation"
+        aria-label="Tap to open invitation"
+      >
+        <span>Tap</span>
+        <span>to</span>
+        <span>Open</span>
+      </button>
+
+    </div>
+
+    <div class="opening-overlay-text">
+
+      <div class="opening-small">
+        YOU'RE INVITED
+      </div>
+
+      <div class="tap-text">
+        Tap to Open
+      </div>
+
+      <div class="opening-date">
+        08 · 11 · 2026
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================= MUSIC ================= -->
+
+  <button
+    class="music-btn"
+    id="musicBtn"
+    aria-label="Play music"
+  >
+    <span class="music-icon">♫</span>
+
+    <span class="music-waves">
+      <i></i>
+      <i></i>
+      <i></i>
+    </span>
+  </button>
+
+  <audio
+    id="weddingMusic"
+    src="wedding-music.mp3"
+    preload="auto"
+    loop
+  ></audio>
+
+
+  <!-- ================= MAIN WEBSITE ================= -->
+
+  <main id="invitation" class="invitation">
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero section-photo">
+
+      <div class="photo-overlay"></div>
+
+      <div class="hero-content">
+
+        <div class="bismillah hero-animate item-1">
+          بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ
+        </div>
+
+        <div class="ornament hero-animate item-2">
+          ✦ ───── ♥ ───── ✦
+        </div>
+
+        <p class="eyebrow hero-animate item-3">
+          WITH GREAT JOY
+        </p>
+
+        <h1 class="hero-animate item-4">
+          Tahir Ayub
+        </h1>
+
+        <div class="and hero-animate item-5">
+          &amp;
+        </div>
+
+        <h2 class="hero-animate item-6">
+          Shaista Ghani
+        </h2>
+
+        <p class="hero-quote hero-animate item-7">
+          “Two hearts, one beautiful journey, and a lifetime of love.”
+        </p>
+
+        <div class="hero-date hero-animate item-8">
+          8 November 2026
+        </div>
+
+        <div class="hero-time hero-animate item-9">
+          1:00 PM — 5:00 PM
+        </div>
+
+        <div class="scroll-cue hero-animate item-10">
+          SCROLL
+          <span>↓</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= HEART SCRATCH ================= -->
+
+    <section class="scratch-section section-photo-light">
+
+      <div class="section-inner">
+
+        <div class="section-heading reveal">
+
+          <span class="mini-label">
+            A LITTLE SURPRISE
+          </span>
+
+          <h2>
+            Scratch to Reveal
+          </h2>
+
+          <p>
+            Reveal the special date of our celebration.
+          </p>
+
+        </div>
+
+
+        <div class="heart-scratch-wrap reveal reveal-up">
+
+          <div class="heart-scratch">
+
+            <div class="heart-scratch-content">
+
+              <span class="small-script">
+                Our Wedding Day
+              </span>
+
+              <strong>
+                8 NOVEMBER 2026
+              </strong>
+
+              <span>
+                Sunday · 1 PM — 5 PM
+              </span>
+
+              <span class="heart-line">
+                ♥
+              </span>
+
+            </div>
+
+            <canvas id="scratchCanvas"></canvas>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= COUNTDOWN ================= -->
+
+    <section class="countdown-section section-photo">
+
+      <div class="photo-overlay"></div>
+
+      <div class="section-inner countdown-inner">
+
+        <div class="section-heading light reveal">
+
+          <span class="mini-label">
+            COUNTING THE MOMENTS
+          </span>
+
+          <h2>
+            Until We Celebrate
+          </h2>
+
+        </div>
+
+
+        <div class="countdown reveal reveal-up">
+
+          <div class="time-box">
+            <strong id="days">00</strong>
+            <span>Days</span>
+          </div>
+
+          <div class="time-box">
+            <strong id="hours">00</strong>
+            <span>Hours</span>
+          </div>
+
+          <div class="time-box">
+            <strong id="minutes">00</strong>
+            <span>Minutes</span>
+          </div>
+
+          <div class="time-box">
+            <strong id="seconds">00</strong>
+            <span>Seconds</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= DETAILS ================= -->
+
+    <section class="details-section section-photo-light">
+
+      <div class="section-inner">
+
+        <div class="section-heading reveal">
+
+          <span class="mini-label">
+            SAVE THE DATE
+          </span>
+
+          <h2>
+            Wedding Details
+          </h2>
+
+        </div>
+
+
+        <div class="details-grid">
+
+          <article class="detail-card reveal reveal-left">
+
+            <div class="detail-icon">
+              ♡
+            </div>
+
+            <span>
+              DATE
+            </span>
+
+            <h3>
+              8 November 2026
+            </h3>
+
+          </article>
+
+
+          <article class="detail-card reveal reveal-up">
+
+            <div class="detail-icon">
+              ◷
+            </div>
+
+            <span>
+              TIME
+            </span>
+
+            <h3>
+              1:00 PM — 5:00 PM
+            </h3>
+
+          </article>
+
+
+          <article class="detail-card reveal reveal-right">
+
+            <div class="detail-icon">
+              ⌂
+            </div>
+
+            <span>
+              VENUE
+            </span>
+
+            <h3>
+              Ibrar Marriage Hall
+            </h3>
+
+            <p>
+              Chicho Ki Malliyan, Joiyanwala Mor Road, Sheikhupura
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= MAP ================= -->
+
+    <section class="map-section">
+
+      <div class="map-wrap reveal">
+
+        <iframe
+          src="https://www.google.com/maps?q=Ibrar%20Marriage%20Hall%2C%20Chicho%20Ki%20Malliyan%2C%20Joiyanwala%20Mor%20Road%2C%20Sheikhupura&output=embed"
+          loading="lazy"
+          title="Ibrar Marriage Hall location">
+        </iframe>
+
+
+        <div class="map-card">
+
+          <span class="mini-label">
+            LOCATION
+          </span>
+
+          <h2>
+            Ibrar Marriage Hall
+          </h2>
+
+          <p>
+            Chicho Ki Malliyan, Joiyanwala Mor Road, Sheikhupura
+          </p>
+
+          <a
+            class="direction-btn"
+            target="_blank"
+            rel="noopener"
+            href="https://www.google.com/maps/dir/?api=1&destination=Ibrar%20Marriage%20Hall%2C%20Chicho%20Ki%20Malliyan%2C%20Joiyanwala%20Mor%20Road%2C%20Sheikhupura"
+          >
+            Get Directions
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= RSVP ================= -->
+
+    <section class="rsvp-section section-photo">
+
+      <div class="photo-overlay"></div>
+
+      <div class="section-inner rsvp-inner">
+
+        <div class="section-heading light reveal">
+
+          <span class="mini-label">
+            WE'D LOVE TO HEAR FROM YOU
+          </span>
+
+          <h2>
+            RSVP
+          </h2>
+
+          <p>
+            Please let us know if you'll be joining us.
+          </p>
+
+        </div>
+
+
+        <form id="rsvpForm" class="rsvp-form reveal reveal-up">
+
+          <div class="form-row">
+
+            <label>
+              Name
+
+              <input
+                type="text"
+                id="guestName"
+                required
+                placeholder="Your name"
+              >
+
+            </label>
+
+
+            <label>
+              Email
+              <small>(optional)</small>
+
+              <input
+                type="email"
+                id="guestEmail"
+                placeholder="Your email"
+              >
+
+            </label>
+
+          </div>
+
+
+          <div class="form-row">
+
+            <label>
+              Number
+
+              <input
+                type="tel"
+                id="guestNumber"
+                required
+                placeholder="Your phone number"
+              >
+
+            </label>
+
+
+            <label>
+              Guests
+
+              <select id="guestCount">
+
+                <option value="1">
+                  1 Guest
+                </option>
+
+                <option value="2">
+                  2 Guests
+                </option>
+
+                <option value="3">
+                  3 Guests
+                </option>
+
+                <option value="4">
+                  4 Guests
+                </option>
+
+                <option value="5">
+                  5 Guests
+                </option>
+
+                <option value="6">
+                  More Then 5
+                </option>
+
+              </select>
+
+            </label>
+
+          </div>
+
+
+          <label>
+            Message
+
+            <textarea
+              id="guestMessage"
+              rows="5"
+              placeholder="Write a message..."
+            ></textarea>
+
+          </label>
+
+
+          <button
+            type="submit"
+            class="submit-btn"
+          >
+            Send RSVP ♥
+          </button>
+
+          <p
+            id="rsvpStatus"
+            class="rsvp-status"
+          ></p>
+
+        </form>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+      <div class="footer-heart">
+        ♥
+      </div>
+
+      <p>
+        With love, Tahir &amp; Shaista
+      </p>
+
+      <span>
+        8 November 2026
+      </span>
+
+    </footer>
+
+  </main>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
