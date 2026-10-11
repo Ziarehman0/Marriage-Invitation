@@ -23,66 +23,42 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("locked");
 
 
-  /* =========================================
-     OPEN INVITATION
+/* =========================================
+     OPEN LUXURY INVITATION
   ========================================= */
+
+  let invitationOpening = false;
 
   openButton.addEventListener("click", async () => {
 
-    if (
-      openingScreen.classList.contains("opened")
-    ) {
-      return;
-    }
+    if (invitationOpening) return;
 
+    invitationOpening = true;
+    openButton.disabled = true;
 
+    // Envelope flap opens and paper starts coming out.
     openingScreen.classList.add("opened");
+    openingScreen.classList.add("lux-paper-out");
 
-
-    /* Start music after user tap */
-
+    // Start music after the user's tap.
     try {
-
       await music.play();
 
       musicBtn.classList.add("playing");
-
-      musicBtn.setAttribute(
-        "aria-label",
-        "Pause music"
-      );
+      musicBtn.setAttribute("aria-label", "Pause music");
 
     } catch (error) {
-
-      console.log(
-        "Browser blocked automatic music."
-      );
-
+      console.log("Browser blocked automatic music.");
     }
 
-
-    /*
-      Envelope animation ke baad
-      invitation show hogi.
-    */
-
+    // Keep the paper visible for 2 seconds.
     setTimeout(() => {
 
-      openingScreen.classList.add(
-        "is-opening"
-      );
+      // Reveal the main website.
+      invitation.classList.add("ready");
+      musicBtn.classList.add("visible");
 
-      invitation.classList.add(
-        "ready"
-      );
-
-      musicBtn.classList.add(
-        "visible"
-      );
-
-      document.body.classList.remove(
-        "locked"
-      );
+      document.body.classList.remove("locked");
 
       window.scrollTo({
         top: 0,
@@ -91,7 +67,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
       observeReveals();
 
-    }, 1200);
+      // Now fade out the complete opening screen.
+      openingScreen.classList.add("lux-finish-opening");
+
+      // Remove the opening screen from interaction
+      // after its fade-out finishes.
+      setTimeout(() => {
+        openingScreen.style.display = "none";
+      }, 800);
+
+    }, 2000);
 
   });
 
