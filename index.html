@@ -16,64 +16,119 @@
 
 <body>
 
-  <!-- ================= FULL SCREEN OPENING ================= -->
+            <!-- ==== FULL SCREEN OPENING ==== -->
 
-  <div class="opening-screen" id="openingScreen">
 
-    <div class="opening-bg"></div>
+<!-- ==== LUXURY WEDDING ENVELOPE OPENING ==== -->
 
-    <div class="full-envelope">
+<div class="opening-screen" id="openingScreen">
 
-      <div class="envelope-back"></div>
+  <div class="opening-bg"></div>
 
-      <div class="envelope-paper">
+  <div class="luxury-envelope-wrap">
 
-        <div class="paper-heart">♥</div>
+    <div class="luxury-envelope" id="luxuryEnvelope">
 
-        <div class="paper-title">
-          YOU ARE INVITED
-        </div>
+      <!-- Envelope back -->
+      <div class="lux-envelope-back"></div>
 
-        <div class="paper-names">
-          Tahir &amp; Shaista
+      <!-- Invitation card -->
+      <div class="lux-invitation-card">
+
+        <div class="lux-card-border">
+
+          <div class="lux-card-content">
+
+            <span class="lux-card-ornament">✦</span>
+
+            <p class="lux-card-kicker">
+              TOGETHER WITH THEIR FAMILIES
+            </p>
+
+            <h2>Wedding</h2>
+
+            <p class="lux-card-subtitle">
+              Invitation
+            </p>
+
+            <div class="lux-card-divider">
+              <span>❦</span>
+            </div>
+
+            <div class="lux-card-names">
+              Tahir
+              <span>&amp;</span>
+              Shaista
+            </div>
+
+            <p class="lux-card-message">
+              REQUEST THE PLEASURE OF YOUR PRESENCE
+            </p>
+
+            <p class="lux-card-date">
+              08 · NOVEMBER · 2026
+            </p>
+
+            <p class="lux-card-time">
+              SUNDAY · 12:00 PM — 4:00 PM
+            </p>
+
+            <span class="lux-card-bottom">✦</span>
+
+          </div>
+
         </div>
 
       </div>
 
-      <div class="envelope-flap"></div>
+      <!-- Envelope front panels -->
+      <div class="lux-envelope-front">
 
-      <div class="envelope-front"></div>
+        <div class="lux-envelope-left"></div>
+        <div class="lux-envelope-right"></div>
+        <div class="lux-envelope-bottom"></div>
 
+      </div>
+
+      <!-- Opening flap -->
+      <div class="lux-envelope-flap"></div>
+
+      <!-- Wax seal / opening button -->
       <button
-        class="wax-seal"
+        class="lux-wax-seal"
         id="openInvitation"
-        aria-label="Tap to open invitation"
+        type="button"
+        aria-label="Open wedding invitation"
       >
-        <span>Tap</span>
-        <span>to</span>
-        <span>Open</span>
+        <span class="lux-seal-monogram"><i>Tab To</i></span>
+        <span class="lux-seal-label">OPEN</span>
       </button>
 
     </div>
 
-    <div class="opening-overlay-text">
+    <div class="lux-opening-caption">
 
-      <div class="opening-small">
-        YOU'RE INVITED
-      </div>
+      <span class="lux-caption-line"></span>
 
-      <div class="tap-text">
-        Tap to Open
-      </div>
+      <p>YOU'RE CORDIALLY INVITED</p>
 
-      <div class="opening-date">
+      <h3>A Celebration of Love</h3>
+
+      <span class="lux-caption-date">
         08 · 11 · 2026
-      </div>
+      </span>
+
+      <span class="lux-caption-hint">
+        TAP THE GOLD SEAL TO OPEN
+      </span>
 
     </div>
 
   </div>
 
+</div>
+
+<!-- ==== END LUXURY ENVELOPE OPENING ==== -->
 
   <!-- ================= MUSIC ================= -->
 
@@ -332,11 +387,11 @@
             </span>
 
             <h3>
-              Taj Palace Marriage Hall
+              TAJ Palace Marriage Hall
             </h3>
 
             <p>
-              Near Bhatto colony, Railway Road, Sheikhupura
+              Railway Road, Near Bhatto Colony , Sheikhupura
             </p>
 
           </article>
@@ -355,11 +410,10 @@
       <div class="map-wrap reveal">
 
         <iframe
-          src="https://www.google.com/maps?q=31.6958528,74.0671304&output=embed"
-          loading="lazy"
-          title="Taj Palace Marriage Hall location">
-        </iframe>
-
+        src="https://www.google.com/maps?q=31.6958528,74.0671304&output=embed"
+        loading="lazy"
+        title="Taj Palace Marriage Hall location">
+      </iframe>
 
         <div class="map-card">
 
@@ -368,7 +422,7 @@
           </span>
 
           <h2>
-            Taj palace Marriage Hall
+            Taj Palace Marriage Hall
           </h2>
 
           <p>
@@ -379,11 +433,10 @@
             class="direction-btn"
             target="_blank"
             rel="noopener"
-            href="https://www.google.com/maps/dir/?api=1&destination=31.7058756,74.0716739"
+            href="https://www.google.com/maps/dir/?api=1&destination=Ibrar%20Marriage%20Hall%2C%20Chicho%20Ki%20Malliyan%2C%20Joiyanwala%20Mor%20Road%2C%20Sheikhupura"
           >
             Get Directions
           </a>
-
 
         </div>
 
@@ -531,7 +584,7 @@
     </section>
 
 
-    <!-- ================= FOOTER ================= -->
+                <!-- FOOTER -->
 
     <footer class="footer">
 
@@ -543,6 +596,10 @@
         With love, Tahir &amp; Shaista
       </p>
 
+      <h4>
+        Thank you for being part of our story.
+      </h4>
+
       <span>
         8 November 2026
       </span>
@@ -550,7 +607,6 @@
     </footer>
 
   </main>
-
 
   <script src="script.js"></script>
 
