@@ -57,277 +57,6 @@ button {
   cursor: pointer;
 }
 
-
-/* =========================================
-   FULL SCREEN OPENING
-========================================= */
-
-.opening-screen {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-
-  width: 100vw;
-  height: 100vh;
-
-  overflow: hidden;
-
-  background: #c88780;
-
-  transition:
-    opacity 1s ease,
-    visibility 1s ease;
-}
-
-.opening-screen.is-opening {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-
-.opening-bg {
-  position: absolute;
-  inset: -5%;
-
-  background:
-    linear-gradient(
-      rgba(55, 25, 25, .30),
-      rgba(55, 25, 25, .30)
-    ),
-    url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=2000&q=90")
-    center / cover no-repeat;
-
-  animation: openingZoom 10s ease-in-out infinite alternate;
-}
-
-
-/* FULL SCREEN ENVELOPE */
-
-.full-envelope {
-  position: absolute;
-
-  inset: 0;
-
-  width: 100vw;
-  height: 100vh;
-
-  overflow: hidden;
-
-  filter:
-    drop-shadow(
-      0 25px 50px rgba(40,20,20,.25)
-    );
-}
-
-
-.envelope-back {
-  position: absolute;
-
-  inset: 0;
-
-  background:
-    linear-gradient(
-      145deg,
-      #f2d1cc,
-      #c98983
-    );
-}
-
-
-.envelope-paper {
-  position: absolute;
-
-  left: 7%;
-  right: 7%;
-
-  top: 7%;
-  bottom: 7%;
-
-  background: #fffaf5;
-
-  display: flex;
-  flex-direction: column;
-
-  justify-content: center;
-  align-items: center;
-
-  gap: 12px;
-
-  color: #7f4d49;
-
-  transform: translateY(15%);
-
-  transition:
-    transform 1.15s cubic-bezier(.2,.8,.2,1);
-
-  z-index: 2;
-}
-
-
-.paper-heart {
-  font-size: 45px;
-}
-
-
-.paper-title {
-  font-size: 13px;
-  letter-spacing: .3em;
-}
-
-
-.paper-names {
-  font:
-    58px "Great Vibes",
-    cursive;
-}
-
-
-.envelope-front {
-  position: absolute;
-
-  inset: 0;
-
-  clip-path:
-    polygon(
-      0 30%,
-      50% 68%,
-      100% 30%,
-      100% 100%,
-      0 100%
-    );
-
-  background:
-    linear-gradient(
-      155deg,
-      #e9bdb7,
-      #b9726d
-    );
-
-  z-index: 4;
-}
-
-
-.envelope-flap {
-  position: absolute;
-
-  inset: 0;
-
-  clip-path:
-    polygon(
-      0 0,
-      100% 0,
-      50% 63%
-    );
-
-  background:
-    linear-gradient(
-      155deg,
-      #f5d8d2,
-      #cb8e87
-    );
-
-  transform-origin: top center;
-
-  transition:
-    transform 1.2s cubic-bezier(.2,.8,.2,1);
-
-  z-index: 5;
-}
-
-
-/* CENTER SEAL */
-
-.wax-seal {
-  position: absolute;
-
-  z-index: 10;
-
-  left: 50%;
-  top: 55%;
-
-  transform:
-    translate(-50%, -50%);
-
-  width: 105px;
-  height: 105px;
-
-  border-radius: 50%;
-
-  border:
-    4px solid rgba(255,255,255,.28);
-
-  color: white;
-
-  background:
-    radial-gradient(
-      circle at 35% 28%,
-      #e7b7a8,
-      #a95e59 68%,
-      #7f4441
-    );
-
-  box-shadow:
-    0 12px 35px rgba(77,38,35,.35);
-
-  display: flex;
-  flex-direction: column;
-
-  justify-content: center;
-  align-items: center;
-
-  line-height: 1.05;
-
-  font-family: Georgia, serif;
-
-  font-size: 15px;
-
-  animation:
-    sealPulse 2s ease-in-out infinite;
-
-  transition:
-    transform .7s ease,
-    opacity .7s ease;
-}
-
-
-.wax-seal span:nth-child(1) {
-  font-size: 14px;
-}
-
-.wax-seal span:nth-child(2) {
-  font-size: 12px;
-}
-
-.wax-seal span:nth-child(3) {
-  font-size: 15px;
-}
-
-
-.opening-screen.opened
-.envelope-flap {
-  transform:
-    rotateX(180deg);
-}
-
-
-.opening-screen.opened
-.envelope-paper {
-  transform:
-    translateY(-12%);
-}
-
-
-.opening-screen.opened
-.wax-seal {
-  transform:
-    translate(-50%, -50%)
-    scale(.1);
-
-  opacity: 0;
-}
-
-
 /* OPENING TEXT */
 
 .opening-overlay-text {
@@ -1535,11 +1264,6 @@ button {
   animation-duration: 18s;
 }
 
-  .paper-names {
-    font-size: 42px;
-  }
-
-
   .wax-seal {
     width: 88px;
     height: 88px;
@@ -1639,9 +1363,97 @@ button {
 
 @media (max-width:450px) {
 
-  .paper-names {
-  font-size: clamp(30px, 10vw, 35px);
+.envelope-paper {
+  left: 4%;
+  right: 4%;
+
+  top: 3%;
+  bottom: 3%;
 }
+
+
+.card-inner {
+  padding:
+    20px 10px;
+}
+
+
+.card-small {
+  font-size: 6px;
+
+  letter-spacing: .16em;
+}
+
+
+.card-title {
+  font-size:
+    clamp(34px, 12vw, 48px);
+}
+
+
+.card-subtitle {
+  font-size: 15px;
+
+  letter-spacing: .12em;
+}
+
+
+.card-divider {
+  width: 55%;
+
+  margin:
+    12px auto;
+}
+
+
+.card-names {
+  font-size:
+    clamp(39px, 13vw, 55px);
+}
+
+
+.card-names span {
+  font-size: 20px;
+
+  margin: 5px 0;
+}
+
+
+.card-line {
+  font-size: 6px;
+
+  letter-spacing: .10em;
+
+  margin-top: 14px;
+}
+
+
+.card-date {
+  font-size: 14px;
+
+  letter-spacing: .07em;
+}
+
+
+.card-time {
+  font-size: 7px;
+
+  letter-spacing: .08em;
+}
+
+
+.card-bottom-ornament {
+  margin-top: 14px;
+
+  font-size: 16px;
+}
+
+
+.wax-seal {
+  width: 78px;
+  height: 78px;
+}
+
 .opening-screen,
 .full-envelope {
   width: 100%;
@@ -1748,9 +1560,881 @@ button {
   .details-grid {
     width: 100%;
   }
-
+z
   .map-wrap {
     width: 100%;
     overflow: hidden;
+  }
+}
+
+
+
+
+
+
+/* ==========================================
+   LUXURY ENVELOPE OPENING
+   Champagne Gold + Ivory + Burgundy
+========================================== */
+
+.opening-screen {
+  --lux-gold: #c6a15b;
+  --lux-gold-light: #f4dfab;
+  --lux-ivory: #fff9ed;
+  --lux-burgundy: #632d39;
+
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  padding: 24px 16px;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 35%,
+      rgba(255, 249, 235, 0.98),
+      rgba(235, 218, 187, 0.97) 55%,
+      #cbb58d 100%
+    );
+
+  transition:
+    opacity 0.9s ease,
+    visibility 0.9s ease;
+}
+
+.opening-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(255, 255, 255, 0.7),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 85% 75%,
+      rgba(255, 255, 255, 0.45),
+      transparent 30%
+    );
+
+  opacity: 0.9;
+}
+
+.luxury-envelope-wrap {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  max-width: 760px;
+
+  perspective: 1400px;
+}
+
+.luxury-envelope {
+  position: relative;
+
+  width: min(100%, 660px);
+  aspect-ratio: 1.55 / 1;
+
+  isolation: isolate;
+  transform-style: preserve-3d;
+
+  filter:
+    drop-shadow(0 25px 30px rgba(67, 43, 24, 0.20));
+}
+
+/* Envelope back */
+
+.lux-envelope-back {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  border: 1px solid rgba(153, 111, 48, 0.65);
+  border-radius: 5px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #f5e6c8,
+      #d8bc83 48%,
+      #f0ddb3
+    );
+
+  box-shadow:
+    inset 0 0 0 5px rgba(255, 250, 235, 0.35),
+    inset 0 0 0 6px rgba(170, 128, 59, 0.25);
+}
+
+/* Invitation card */
+
+.lux-invitation-card {
+  position: absolute;
+
+  z-index: 2;
+  left: 12%;
+  top: 3%;
+
+  width: 76%;
+  height: 91%;
+
+  padding: 8px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fffdf6,
+      #f5e8ce,
+      #fffaf0
+    );
+
+  border: 1px solid #c6a15b;
+  box-shadow:
+    0 5px 20px rgba(67, 43, 24, 0.14);
+
+  transition:
+    transform 1s cubic-bezier(0.2, 0.7, 0.2, 1),
+    top 1s ease;
+}
+
+.lux-card-border {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 8px;
+
+  border: 1px solid #c6a15b;
+  outline: 1px solid rgba(198, 161, 91, 0.32);
+  outline-offset: -5px;
+
+  text-align: center;
+}
+
+.lux-card-content {
+  width: 100%;
+  color: #543b2b;
+  font-family: "Cormorant Garamond", serif;
+  line-height: 1.1;
+}
+
+.lux-card-ornament {
+  display: block;
+  margin-bottom: 5px;
+
+  color: #b58a42;
+  font-size: clamp(13px, 2vw, 20px);
+}
+
+.lux-card-kicker {
+  margin: 0 0 7px;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(5px, 1.05vw, 9px);
+  letter-spacing: 0.16em;
+}
+
+.lux-card-content h2 {
+  margin: 0;
+
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-size: clamp(27px, 5.8vw, 53px);
+  line-height: 1;
+}
+
+.lux-card-subtitle {
+  margin: 2px 0 0;
+
+  font-size: clamp(10px, 2vw, 17px);
+  font-style: italic;
+  letter-spacing: 0.12em;
+}
+
+.lux-card-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+  margin: 5px 0;
+
+  color: #b58a42;
+}
+
+.lux-card-divider::before,
+.lux-card-divider::after {
+  content: "";
+  width: 35px;
+  height: 1px;
+  background: #c6a15b;
+}
+
+.lux-card-divider span {
+  font-size: clamp(12px, 2vw, 18px);
+}
+
+.lux-card-names {
+  color: #713e46;
+  font-size: clamp(23px, 4.8vw, 43px);
+  line-height: 1.02;
+}
+
+.lux-card-names span {
+  display: block;
+  margin: 2px 0;
+
+  color: #b58a42;
+  font-size: 0.58em;
+  font-style: italic;
+}
+
+.lux-card-message {
+  margin: 8px 0 5px;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(4px, 0.9vw, 8px);
+  letter-spacing: 0.09em;
+}
+
+.lux-card-date {
+  margin: 0 0 4px;
+
+  color: #966d2e;
+  font-size: clamp(8px, 1.6vw, 14px);
+  letter-spacing: 0.08em;
+}
+
+.lux-card-time {
+  margin: 0;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(5px, 1vw, 9px);
+  letter-spacing: 0.06em;
+}
+
+.lux-card-bottom {
+  display: block;
+  margin-top: 6px;
+
+  color: #b58a42;
+  font-size: clamp(10px, 1.5vw, 14px);
+}
+
+/* Envelope front */
+
+.lux-envelope-front {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.lux-envelope-left,
+.lux-envelope-right,
+.lux-envelope-bottom {
+  position: absolute;
+  inset: 0;
+}
+
+.lux-envelope-left {
+  background:
+    linear-gradient(
+      125deg,
+      #f6e7c7,
+      #d6b87e
+    );
+
+  clip-path: polygon(0 0, 53% 54%, 0 100%);
+}
+
+.lux-envelope-right {
+  background:
+    linear-gradient(
+      235deg,
+      #fff1d2,
+      #c9a86b
+    );
+
+  clip-path: polygon(100% 0, 47% 54%, 100% 100%);
+}
+
+.lux-envelope-bottom {
+  background:
+    linear-gradient(
+      0deg,
+      #c4a066,
+      #f0d9a8
+    );
+
+  clip-path: polygon(0 100%, 50% 47%, 100% 100%);
+}
+
+/* Top envelope flap */
+
+.lux-envelope-flap {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+
+  background:
+    linear-gradient(
+      145deg,
+      #f7e9cb,
+      #d8b97c 80%
+    );
+
+  clip-path: polygon(0 0, 100% 0, 50% 58%);
+
+  transform-origin: top center;
+  transform: rotateX(0deg);
+
+  backface-visibility: visible;
+
+  filter:
+    drop-shadow(0 3px 3px rgba(90, 62, 29, 0.12));
+
+  transition:
+    transform 0.85s ease,
+    z-index 0s 0.4s;
+}
+
+.lux-envelope-flap::after {
+  content: "";
+
+  position: absolute;
+  left: 8%;
+  top: 5%;
+
+  width: 84%;
+  height: 1px;
+
+  background: rgba(157, 116, 48, 0.55);
+}
+
+/* Gold wax seal */
+
+.lux-wax-seal {
+  position: absolute;
+  left: 50%;
+  top: 54%;
+
+  z-index: 7;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: clamp(64px, 12vw, 100px);
+  aspect-ratio: 1;
+
+  padding: 5px;
+
+  border: 2px solid #e4c77f;
+  border-radius: 50%;
+
+  color: #fff1cb;
+
+  background:
+    radial-gradient(
+      circle at 32% 25%,
+      #b98b43,
+      #793e32 52%,
+      #54262b 100%
+    );
+
+  box-shadow:
+    0 0 0 4px rgba(195, 151, 72, 0.38),
+    0 0 0 6px rgba(255, 246, 222, 0.55),
+    0 6px 14px rgba(70, 37, 26, 0.28),
+    inset 0 0 0 2px rgba(255, 239, 192, 0.3);
+
+  transform: translate(-50%, -50%);
+
+  cursor: pointer;
+
+  font-family: "Cormorant Garamond", serif;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    opacity 0.4s ease;
+}
+
+.lux-wax-seal:hover {
+  transform: translate(-50%, -50%) scale(1.07);
+
+  box-shadow:
+    0 0 0 5px rgba(195, 151, 72, 0.42),
+    0 0 25px rgba(222, 184, 105, 0.65);
+}
+
+@keyframes sealGentlePulse {
+  0%, 100% {
+    scale: 1;
+  }
+
+  50% {
+    scale: 1.05;
+  }
+}
+
+.lux-wax-seal {
+  animation: sealGentlePulse 1.8s ease-in-out infinite;
+}
+
+.lux-seal-monogram {
+  font-size: clamp(18px, 3.2vw, 29px);
+  line-height: 1;
+  font-weight: 600;
+}
+
+.lux-seal-monogram i {
+  color: #edce8b;
+  font-size: 0.65em;
+}
+
+.lux-seal-label {
+  margin-top: 4px;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(7px, 1vw, 9px);
+  letter-spacing: 0.19em;
+}
+
+/* Caption below envelope */
+
+.lux-opening-caption {
+  width: 100%;
+  margin-top: clamp(30px, 5vh, 45px);
+
+  color: #694a31;
+  text-align: center;
+
+  animation: luxCaptionReveal 1.2s ease both;
+}
+
+.lux-caption-line {
+  display: block;
+
+  width: 65px;
+  height: 1px;
+
+  margin: 0 auto 13px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #b18a4a,
+      transparent
+    );
+}
+
+.lux-opening-caption p {
+  margin: 0;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.25em;
+}
+
+.lux-opening-caption h3 {
+  margin: 8px 0;
+
+  color: #703d45;
+
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-size: clamp(27px, 4vw, 39px);
+}
+
+.lux-caption-date {
+  display: block;
+
+  color: #8a6738;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+}
+
+.lux-caption-hint {
+  display: block;
+  margin-top: 18px;
+
+  color: #80694c;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.17em;
+
+  animation: luxHintPulse 2s ease-in-out infinite;
+}
+
+/* Opening animation */
+
+#openingScreen.is-opening .lux-envelope-flap {
+  z-index: 1;
+  transform: rotateX(180deg);
+}
+
+#openingScreen.is-opening .lux-invitation-card {
+  top: -30%;
+  transform: translateY(-15%) scale(1.04);
+}
+
+#openingScreen.is-opening .lux-wax-seal {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.5);
+}
+
+#openingScreen.is-opening .lux-envelope {
+  transform: translateY(12px);
+  transition: transform 0.8s ease;
+}
+
+#openingScreen.is-opening {
+  pointer-events: none;
+}
+
+#openingScreen.is-closing {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@keyframes luxCaptionReveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes luxHintPulse {
+  0%, 100% {
+    opacity: 0.65;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Laptop / desktop */
+
+@media (min-width: 900px) {
+  .luxury-envelope-wrap {
+    max-width: 760px;
+  }
+
+  .luxury-envelope {
+    width: min(100%, 660px);
+  }
+
+  .lux-opening-caption {
+    margin-top: 38px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .opening-screen {
+    padding: 20px 18px;
+  }
+
+  .luxury-envelope-wrap {
+    max-width: 480px;
+  }
+
+  .luxury-envelope {
+    width: 100%;
+    aspect-ratio: 1.28 / 1;
+  }
+
+  .lux-invitation-card {
+    left: 10%;
+    top: 4%;
+
+    width: 80%;
+    height: 89%;
+
+    padding: 5px;
+  }
+
+  .lux-card-border {
+    padding: 5px;
+  }
+
+  .lux-card-kicker {
+    letter-spacing: 0.08em;
+    margin-bottom: 5px;
+  }
+
+  .lux-card-divider {
+    margin: 3px 0;
+  }
+
+  .lux-card-message {
+    margin-top: 5px;
+    letter-spacing: 0.02em;
+  }
+
+  .lux-card-bottom {
+    margin-top: 4px;
+  }
+
+  .lux-opening-caption {
+    margin-top: 28px;
+  }
+
+  .lux-opening-caption p {
+    font-size: 9px;
+  }
+
+  .lux-opening-caption h3 {
+    margin: 6px 0;
+  }
+
+  .lux-caption-hint {
+    margin-top: 14px;
+    font-size: 8px;
+  }
+
+  .lux-wax-seal {
+    width: 68px;
+  }
+}
+
+/* Small mobile screens */
+
+@media (max-width: 360px) {
+  .opening-screen {
+    padding: 16px 14px;
+  }
+
+  .luxury-envelope {
+    aspect-ratio: 1.18 / 1;
+  }
+
+  .lux-invitation-card {
+    left: 8%;
+    width: 84%;
+  }
+
+  .lux-card-kicker {
+    font-size: 5px;
+  }
+
+  .lux-card-names {
+    font-size: 22px;
+  }
+
+  .lux-card-message {
+    font-size: 4px;
+  }
+
+  .lux-opening-caption {
+    margin-top: 24px;
+  }
+}
+
+/* Short laptop screens */
+
+@media (max-height: 650px) and (min-width: 601px) {
+  .opening-screen {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .luxury-envelope {
+    width: min(68vh, 600px);
+  }
+
+  .lux-opening-caption {
+    margin-top: 16px;
+  }
+
+  .lux-caption-hint {
+    margin-top: 9px;
+  }
+}
+
+/* Respect reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .lux-opening-caption,
+  .lux-caption-hint {
+    animation: none;
+  }
+
+  .lux-envelope-flap,
+  .lux-invitation-card,
+  .lux-wax-seal,
+  .opening-screen {
+    transition-duration: 0.01ms;
+  }
+}
+
+
+/* FIX: Opening screen must disappear after opening */
+
+#openingScreen.is-opening,
+#openingScreen.is-closing,
+#openingScreen.opening-screen.is-opening {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Hide old envelope elements if still present */
+#openingScreen.is-opening .full-envelope,
+#openingScreen.is-opening .envelope-paper,
+#openingScreen.is-opening .envelope-back,
+#openingScreen.is-opening .envelope-front,
+#openingScreen.is-opening .envelope-flap,
+#openingScreen.is-opening .wax-seal {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Make the website visible after opening */
+#invitation.ready {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+
+/* ==========================================
+   LUXURY ENVELOPE - SIZE & OPENING FIX
+   ========================================== */
+
+/* Full-screen opening background */
+#openingScreen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 16px;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+/* Make the envelope much larger on desktop */
+#openingScreen .luxury-envelope-wrap {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(70px);
+}
+
+/* Large, responsive envelope */
+#openingScreen .luxury-envelope {
+  width: min(96vw, 110vh, 1400px);
+  max-width: 100%;
+  flex-shrink: 0;
+  aspect-ratio: 1.55 / 1;
+  overflow: visible;
+}
+
+/* Keep the invitation card inside the envelope */
+#openingScreen .lux-invitation-card {
+  top: 3%;
+  transition:
+    top 0.85s cubic-bezier(.2,.8,.2,1),
+    transform 0.85s cubic-bezier(.2,.8,.2,1);
+}
+
+/* Paper comes out immediately after clicking */
+#openingScreen.lux-paper-out .lux-invitation-card {
+  top: -65%;
+  transform: translateY(-8%) scale(1.04);
+}
+
+/* Keep the paper animation visible before fading out */
+#openingScreen.lux-finish-opening {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Mobile envelope sizing */
+@media (max-width: 600px) {
+  #openingScreen {
+    padding: 14px;
+  }
+
+  #openingScreen .luxury-envelope-wrap {
+    width: 100%;
+    max-width: 560px;
+  }
+
+  #openingScreen .luxury-envelope {
+    width: 100%;
+    aspect-ratio: 1.28 / 1.3;
+  }
+
+  #openingScreen .lux-invitation-card {
+    top: 4%;
+  }
+
+  #openingScreen.lux-paper-out .lux-invitation-card {
+    top: -65%;
+    transform: translateY(-8%) scale(1.03);
+  }
+}
+
+/* Short laptop screens */
+@media (max-height: 650px) and (min-width: 601px) {
+  #openingScreen .luxury-envelope {
+    width: min(96vw, 90vh, 1400px);
+  }
+
+  #openingScreen .lux-opening-caption {
+    margin-top: 14px;
+  }
+
+  #openingScreen .lux-caption-hint {
+    margin-top: 8px;
+  }
+}
+
+
+/* FIX: Show the FULL invitation paper on PC */
+@media (min-width: 601px) {
+  #openingScreen.lux-paper-out .lux-invitation-card {
+    top: -38% !important;
+    transform: translateY(0) scale(1) !important;
+    z-index: 10 !important;
   }
 }
